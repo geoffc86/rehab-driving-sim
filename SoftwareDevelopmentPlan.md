@@ -133,6 +133,8 @@ The project schedule provides information about the project outline.
 #### 4.4.2 Task/Resource Table
 | Task      	| Software Resource | Hawrdware Resources |	Human Resources|
 | ----------- | ------------------| -------------------	| ---------------|
-| Experiment Scheduler       | TBD       			|     TBD      					|				TBD				 |
-|		l					|										|											|						     |
-| Paragraph   | Text        			|           					|						     |
+| Experiment Scheduler       | TBD       			|     TBD      					|				TBD			|
+|	Training Scenarios|	SimCommander, Simtools	|	SimGear, external monitors	|		TBD		|
+| Test Scenarios | SimCommander, Simtools  | SimGear, external monitors 	|		TBD			|
+| Data Acquisition | SimCommander, Simtools  |   SimGear   	|		TBD	|
+| Deliverables   | Google Docs, Slack   |   N/A  |Marissa, Geoff, Simon, Jackson|
