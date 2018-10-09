@@ -1,9 +1,9 @@
 ## Software Development Plan
 
-- [4.1 Plan Introduction](#41---plan-introduction)
-- [4.2 Project Resources](#42---project-resources)
-- [4.3 Project Organization](#43---project-organization)
-- [4.4 Project Schedule](#44---project-schedule)
+- [4.1 Plan Introduction](#41-plan-introduction)
+- [4.2 Project Resources](#42-project-resources)
+- [4.3 Project Organization](#43-project-organization)
+- [4.4 Project Schedule](#44-project-schedule)
 
 #### 4.1 Plan Introduction
 
