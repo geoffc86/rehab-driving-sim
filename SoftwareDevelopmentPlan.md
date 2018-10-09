@@ -131,3 +131,8 @@ The project schedule provides information about the project outline.
 #### 4.4.1 Pert/GANTT Chart
 
 #### 4.4.2 Task/Resource Table
+| Task      	| Software Resource | Hawrdware Resources |	Human Resources|
+| ----------- | ------------------| -------------------	| ---------------|
+| Header      | Title       			|           					|								 |
+|							|										|											|						     |
+| Paragraph   | Text        			|           					|						     |
