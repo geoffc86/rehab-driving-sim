@@ -1,5 +1,10 @@
 ## Software Development Plan
 
+- [4.1 Plan Introduction](#41---plan-introduction)
+- [4.2 Project Resources](#42---project-resources)
+- [4.3 Project Organization](#43---project-organization)
+- [4.4 Project Schedule](#44---project-schedule)
+
 #### 4.1 Plan Introduction
 
 This document serves as a Software Development Plan (SDP) for the
@@ -126,11 +131,11 @@ training and test scenarios such that it can be analyzed for research. Saved
 data will remain associated with the user to judge areas of improvement.
 
 #### 4.4 Project Schedule
-The project schedule provides information about the project outline.
+The project schedule provides specific information about the project timeline. Included is a development schedule in the form of a Gantt Chart, and a table outlining task and resource allocations.
 
 #### 4.4.1 Pert/GANTT Chart
 
-![Gantt Chard](ganttChart.png)
+![Gantt Chart](ganttChart.png)
 
 
 #### 4.4.2 Task/Resource Table
