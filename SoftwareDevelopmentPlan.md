@@ -7,26 +7,9 @@
 
 ## 4.1 Plan Introduction
 
-This document serves as a Software Development Plan (SDP) for the
-rehabilitation driving simulator which will allow and assist rehabilitation
-for drivers who have been physically challenged in some way. The main users
-will be drivers who are practicing and learning how to driver again. The
-driving simulator will help drivers feel confident on the road again by
-allowing the drivers to drive on the tracks that we have created or altered.
-The simulator will provide a seat and controls, and the car seat will move
-around to provide haptic feedback to express the reality of driving. Precise
-computer controls is required to link to the controls and the simulated
-roadway to provide a life-like experience.This will help the user overcome
-the idea of anxiety and stress while being a new driver on the road.
+This document serves as a Software Development Plan (SDP) for the LMU Rehabilitation Driving Simulator, the purpose of which is to assist the recovery and rehabilitation efforts of people who have suffered a stroke or other serious brain injury. Thus, the primary users will be people who have suffered a brain injury, and are learning how to drive again. The goal of the driving simulator project is to help these drivers regain confidence on the road by allowing them to practice driving on realistic simulated tracks that we have created or modified. The simulator offers a car seat, which moves to provide haptic feedback expressing the reality of driving, and typical driving controls. Precise computer controls are required to link this interface and the simulated roadway to provide a life-like experience; this sandbox approach will help the user overcome the anxiety and stress of effectively being a new driver on the road.
 
-The development of this project began on August 29, 2018. The team has
-completed several deliverables and have received certifications for research
-training. The team is required to make the driving experience as real as it
-can be. Therefore, not only is our task to create and program different
-driving tracks but we need to communicate with the mechanical engineers
-to make sure the hardware feedback is cooperating with the users control
-movements. The team is very passionate about the project and it is our goal
-to make the rehabilitation driving simulator as real as it can be.
+The development of this project began on August 29, 2018. The team has completed several deliverables, and all have received training certifications for research involving human subjects. The team is expected to make the driving experience as real as possible while also respecting the conditions of our users; therefore, our task is not only to create and program different driving tracks, but also to communicate with the mechanical engineering team to ensure that the hardware's feedback matches what users would expect. The whole team is very passionate about the project, and it is our goal to make the Rehabilitation Driving Simulator as beneficial as it can be.
 
 #### 4.1.1 Project Deliverables
 
