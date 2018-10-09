@@ -81,20 +81,20 @@ rehabilitate their driving skills. The team will also be completing all
 documentation, presentations, and anything else needed for the project.
 
 #### 4.2.1 Hardware Resources
-SimGear GT Elite driving simulator
-3 external monitors with HDMI connections
-WiFi or wired internet connections
-Windows system
+* SimGear GT Elite driving simulator
+* 3 external monitors with HDMI connections
+* WiFi or wired internet connections
+* Windows system
 
 #### 4.2.2 Software Resources
-Windows 10
-SimGear
-SimCommander 4
-SimTools
-Project Cars 2
-American Truck Simulator
-City Car Driving v1.5
-More TBD
+* Windows 10
+* SimGear
+* SimCommander 4
+* SimTools
+* Project Cars 2
+* American Truck Simulator
+* City Car Driving v1.5
+* More TBD
 
 #### 4.3 Project Organization
 Deliverables: The deliverables to-date are the Project Proposal and
