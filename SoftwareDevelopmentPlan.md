@@ -133,6 +133,6 @@ The project schedule provides information about the project outline.
 #### 4.4.2 Task/Resource Table
 | Task      	| Software Resource | Hawrdware Resources |	Human Resources|
 | ----------- | ------------------| -------------------	| ---------------|
-| Header      | Title       			|           					|								 |
-|							|										|											|						     |
+| Experiment Scheduler       | TBD       			|     TBD      					|				TBD				 |
+|		l					|										|											|						     |
 | Paragraph   | Text        			|           					|						     |
