@@ -1,26 +1,27 @@
 ## Software Development Plan
 
 #### 4.1 Plan Introduction
-	This document serves as a Software Development Plan (SDP) for the
-  rehabilitation driving simulator which will allow and assist rehabilitation
-  for drivers who have been physically challenged in some way. The main users
-  will be drivers who are practicing and learning how to driver again. The
-  driving simulator will help drivers feel confident on the road again by
-  allowing the drivers to drive on the tracks that we have created or altered.
-  The simulator will provide a seat and controls, and the car seat will move
-  around to provide haptic feedback to express the reality of driving. Precise
-  computer controls is required to link to the controls and the simulated
-  roadway to provide a life-like experience.This will help the user overcome
-  the idea of anxiety and stress while being a new driver on the road.
 
-	The development of this project began on August 29, 2018. The team has
-  completed several deliverables and have received certifications for research
-  training. The team is required to make the driving experience as real as it
-  can be. Therefore, not only is our task to create and program different
-  driving tracks but we need to communicate with the mechanical engineers
-  to make sure the hardware feedback is cooperating with the users control
-  movements. The team is very passionate about the project and it is our goal
-  to make the rehabilitation driving simulator as real as it can be.
+This document serves as a Software Development Plan (SDP) for the
+rehabilitation driving simulator which will allow and assist rehabilitation
+for drivers who have been physically challenged in some way. The main users
+will be drivers who are practicing and learning how to driver again. The
+driving simulator will help drivers feel confident on the road again by
+allowing the drivers to drive on the tracks that we have created or altered.
+The simulator will provide a seat and controls, and the car seat will move
+around to provide haptic feedback to express the reality of driving. Precise
+computer controls is required to link to the controls and the simulated
+roadway to provide a life-like experience.This will help the user overcome
+the idea of anxiety and stress while being a new driver on the road.
+
+The development of this project began on August 29, 2018. The team has
+completed several deliverables and have received certifications for research
+training. The team is required to make the driving experience as real as it
+can be. Therefore, not only is our task to create and program different
+driving tracks but we need to communicate with the mechanical engineers
+to make sure the hardware feedback is cooperating with the users control
+movements. The team is very passionate about the project and it is our goal
+to make the rehabilitation driving simulator as real as it can be.
 
 #### 4.1.1 Project Deliverables
 
@@ -29,7 +30,6 @@ The project proposal consists of a description of the project, and a
 justification of the project. The description provides a high-level
 overview of the project, and the justification explains the team's
 choice of project.
-
 	Due Week 2 (5 September)
 
 #### 4.1.1.2 - Software Requirements Specification Document
