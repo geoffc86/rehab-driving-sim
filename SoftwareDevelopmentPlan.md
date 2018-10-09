@@ -129,6 +129,10 @@ data will remain associated with the user to judge areas of improvement.
 The project schedule provides information about the project outline.
 
 #### 4.4.1 Pert/GANTT Chart
+Here's an image of a drag racer in action:
+
+![Gantt Chard](ganttChart.png)
+
 
 #### 4.4.2 Task/Resource Table
 | Task      	| Software Resource | Hawrdware Resources |	Human Resources|
