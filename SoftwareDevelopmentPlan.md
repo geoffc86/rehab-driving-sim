@@ -1,11 +1,11 @@
-## Software Development Plan
+# Software Development Plan
 
 - [4.1 Plan Introduction](#41-plan-introduction)
 - [4.2 Project Resources](#42-project-resources)
 - [4.3 Project Organization](#43-project-organization)
 - [4.4 Project Schedule](#44-project-schedule)
 
-#### 4.1 Plan Introduction
+## 4.1 Plan Introduction
 
 This document serves as a Software Development Plan (SDP) for the
 rehabilitation driving simulator which will allow and assist rehabilitation
@@ -79,7 +79,7 @@ hands-on, real-time interaction with the software (though this will clearly be
 somewhat difficult for our project, with its specialized hardware requirements).
 	Due Week 16 (12 December)
 
-#### 4.2 Project Resources
+## 4.2 Project Resources
 The software for this project will be developed by the team members working
 collaboratively to create tracks and courses for the users to practice and
 rehabilitate their driving skills. The team will also be completing all
@@ -101,7 +101,7 @@ documentation, presentations, and anything else needed for the project.
 * City Car Driving v1.5
 * More TBD
 
-#### 4.3 Project Organization
+## 4.3 Project Organization
 Deliverables: The deliverables to-date are the Project Proposal and
 Presentation, Requirements Specification, Preliminary Development Schedule,
 and Software Development Plan. Geoff Colman and Jackson Myers completed the
@@ -130,7 +130,7 @@ Data Acquisition: This piece of software will allow us to harvest data from
 training and test scenarios such that it can be analyzed for research. Saved
 data will remain associated with the user to judge areas of improvement.
 
-#### 4.4 Project Schedule
+## 4.4 Project Schedule
 The project schedule provides specific information about the project timeline. Included is a development schedule in the form of a Gantt Chart, and a table outlining task and resource allocations.
 
 #### 4.4.1 Pert/GANTT Chart
