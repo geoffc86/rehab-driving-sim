@@ -17,19 +17,25 @@ The plugins are implemented as a dynamically loaded libraries (DLL on Windows, S
 
 The data of those values are interpreted as paths to the libraries, one path per value. The names of the values are not relevant however it is recommended to use something identifying your product to avoid possible conflicts. When installing your product you can create this value including all the keys in the path if they do not exist yet to allow the game to find the plugin even if the user installs the game latter. When uninstalling your product you should remove the value. The keys can be removed if and only if they are empty.
 
+
+
 If one plugin is specified more than once, the behavior is undefined. When the game wants to activate specific API, it will call the initialization function for that API in all plugins which export the required set of functions for that API. When the game wants to deactivate specific API, it will call the de-initialization function in all plugins which indicated success during the initialization and which export that function. Once all APIs are de-initialized, the game might unload the plugins. The plugins MUST be written with assumption that the initialization/de-initialization cycle might happen several times for single load/unload cycle and that there might be several load/unload cycles per lifetime of the game process.
 
 
 
 The ETS2/ATS provides several console commands to manipulate the APIs to simplify development. Note that those commands work only if there was at least one telemetry plugin during the startup as otherwise the game might skip initializations which are only necessary when the API is active. The commands are:
 
-sdk reinit
+
+
+sdk reinit	
 Does de-initialize/initialize cycle for all APIs on all plugins. Useful if the plugin is loading some configuration from file during initialization.
 
-sdk unload
+
+sdk unload	
 De-initializes all APIs and unloads all plugins. Useful if you want to build a new version of the plugin. Use "sdk reload" to load the new plugin.
 
-sdk reload
+
+sdk reload	
 De-initializes all APIs, unloads all plugins, reloads all plugins and initializes the APIs.
 
 
@@ -58,8 +64,10 @@ In addition to the API version, the initialization parameter contains identifica
 
 Telemetry API provides output of various dynamic (e.g. truck speed) or semi-dynamic (e.g. truck parameters) information. Telemetry supports two kinds of callbacks:
 
+
 -- Events
 Global callbacks called to indicate specific phase of processing (e.g. start/end of telemetry per frame data) or to notify about change in semi-dynamic data (e.g. changed truck parameters because user switched to a different truck). The event callbacks are provided with id of the event, pointer to event-specific structure with additional information and context information specified during callback registration. It is possible to register channel callbacks from within event callback. This is useful when configuration events (e.g. truck change) are received.
+
 
 -- Channels
 Associated with individual sources of telemetry information (e.g. position, speed, rpm). The callback is called when value in corresponding source is changed or is assumed to be changed (e.g. for some inputs the game assumes that the value is changing most of the time anyway and will not filter the calls). The callback is provided with identification of the channel, its new value and context information specified during callback registration. Some sources can provide the value in more than one format (e.g. as double or float). In that case the callback will receive value in the format specified during callback registration.
@@ -70,8 +78,9 @@ Note that the game might contain additional channels and configurations with "de
 
 ===== Scale ETS2/ATS
 
+
 The map scale varies depending on situation (e.g. it is different in cities than in other parts of the map and different in UK than in the continental Europe). To maintain the apparent distances, the game scales delta applied to the time-of-day and to the distance driven (e.g. odometer) by factor derived from the current situation. The current value of the scale is provided trough the SCS_TELEMETRY_CHANNEL_local_scale channel.
 
-===== Timing ETS2/ATS
 
+===== Timing ETS2/ATS
 The rendering time advances by variable steps depending on effective FPS. This time controls the animations and processing of inputs happens at start of each rendering frame. The physics tries to run with a fixed step staying at most one step ahead of the current rendering time. Each physics step is considered a frame for telemetry purposes. For rendering purposes the physically simulated position and orientation is interpolated from two surrounding physics steps.
