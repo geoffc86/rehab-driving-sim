@@ -93,6 +93,22 @@ function startTrial() {
   trialStart = T.timerDiv.innerHTML
 }
 
+$(document).keydown(function(keyPressed) {
+   if (keyPressed.keyCode == 49) {
+     trackCounter();
+     console.log("Pressed 1");
+   } else if (keyPressed.keyCode == 50) {
+     tractionCounter();
+     console.log("Pressed 2");
+   } else if (keyPressed.keyCode == 51) {
+     crashCounter();
+     console.log("Pressed 3");
+   } else if (keyPressed.keyCode == 52) {
+     lap();
+     console.log("Pressed 4");
+   }
+  });
+
 function stopTimer() {
   clearInterval(T.timerInterval); // stop updating the timer
   trialData.trialStart = trialStart;
@@ -114,5 +130,4 @@ function clearTimer() {
   tractionViolations = [];
   crashViolations = [];
   laps = [];
-  console.log(trialData);
 }

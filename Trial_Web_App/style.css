@@ -52,14 +52,14 @@
 
 #stop  { background-color: red; }
 
-#clear { background-color: yellow; }
+#clear { background-color: lightblue; }
 
-#start { margin-top: 20px; }
+#start { margin-top: 20px; background-color: yellow;}
 
-#track { margin-top: 20px; }
-#traction { margin-top: 20px; }
-#crash { margin-top: 20px; }
-#lap { margin-top: 20px; margin-left: 20px;}
+#track { margin-top: 20px; background-color: orange;}
+#traction { margin-top: 20px; background-color: orange;}
+#crash { margin-top: 20px; background-color: orange;}
+#lap { margin-top: 20px; margin-left: 20px; background-color: lightblue;}
 
 #counters {
   float: left;
