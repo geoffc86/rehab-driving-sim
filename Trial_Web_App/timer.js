@@ -1,6 +1,11 @@
 T = {};
 T.timerDiv = document.getElementById('timer');
-let trialStart = 0, trackViolations = 0, tractionViolations = 0, crashViolations = 0;
+let trialStart = 0,
+  trackViolations = [],
+  tractionViolations = [],
+  crashViolations = [],
+  laps = [];
+let trialData = new Object();
 
 function displayTimer() {
   // initilized all local variables:
@@ -76,9 +81,13 @@ function startTimer() {
 
 }
 
-function trackCounter() {trackViolations++;}
-function tractionCounter() {tractionViolations++;}
-function crashCounter() {crashViolations++;}
+function trackCounter() { trackViolations.push(T.timerDiv.innerHTML); }
+
+function tractionCounter() { tractionViolations.push(T.timerDiv.innerHTML); }
+
+function crashCounter() { crashViolations.push(T.timerDiv.innerHTML); }
+
+function lap() { laps.push(T.timerDiv.innerHTML); }
 
 function startTrial() {
   trialStart = T.timerDiv.innerHTML
@@ -86,10 +95,12 @@ function startTrial() {
 
 function stopTimer() {
   clearInterval(T.timerInterval); // stop updating the timer
-  console.log("trialStart: " + trialStart);
-  console.log("trackViolations: " + trackViolations);
-  console.log("tractionViolations: " + tractionViolations);
-  console.log("crashViolations: " + crashViolations);
+  trialData.trialStart = trialStart;
+  trialData.trackViolations = trackViolations;
+  trialData.tractionViolations = tractionViolations;
+  trialData.crashViolations = crashViolations;
+
+  console.log(trialData);
 }
 
 function clearTimer() {
