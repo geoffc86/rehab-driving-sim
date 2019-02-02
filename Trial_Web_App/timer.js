@@ -108,7 +108,8 @@ function clearTimer() {
   T.timerDiv.innerHTML = "00:00:00:00"; // reset timer to all zeros
   T.difference = 0;
   trialStart = 0;
-  trackViolations = 0;
-  tractionViolations = 0;
-  crashViolations = 0;
+  trackViolations = [];
+  tractionViolations = [];
+  crashViolations = [];
+  laps = [];
 }
