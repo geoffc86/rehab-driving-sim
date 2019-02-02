@@ -56,9 +56,14 @@
 
 #start { margin-top: 20px; }
 
+#track { margin-top: 20px; }
+#traction { margin-top: 20px; }
+#crash { margin-top: 20px; }
+#lap { margin-top: 20px; margin-left: 20px;}
+
 #counters {
   float: left;
-  margin-top: 80px;
+  margin-top: 60px;
   margin-left: -185px;
 }
 

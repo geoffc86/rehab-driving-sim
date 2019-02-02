@@ -99,6 +99,7 @@ function stopTimer() {
   trialData.trackViolations = trackViolations;
   trialData.tractionViolations = tractionViolations;
   trialData.crashViolations = crashViolations;
+  trialData.laps = laps
 
   console.log(trialData);
 }
@@ -107,9 +108,11 @@ function clearTimer() {
   clearInterval(T.timerInterval);
   T.timerDiv.innerHTML = "00:00:00:00"; // reset timer to all zeros
   T.difference = 0;
+  trialData = new Object();
   trialStart = 0;
   trackViolations = [];
   tractionViolations = [];
   crashViolations = [];
   laps = [];
+  console.log(trialData);
 }
