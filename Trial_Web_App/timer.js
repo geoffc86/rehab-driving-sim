@@ -109,6 +109,14 @@ $(document).keydown(function(keyPressed) {
    }
   });
 
+function download(content, fileName, contentType) {
+    var a = document.createElement("a");
+    var file = new Blob([content], {type: contentType});
+    a.href = URL.createObjectURL(file);
+    a.download = fileName;
+    a.click();
+}
+
 function stopTimer() {
   clearInterval(T.timerInterval); // stop updating the timer
   trialData.trialStart = trialStart;
@@ -118,6 +126,7 @@ function stopTimer() {
   trialData.laps = laps
 
   console.log(trialData);
+  download(JSON.stringify(trialData), 'data.json', 'application/json');
 }
 
 function clearTimer() {
