@@ -70,6 +70,11 @@
 #rows {
 }
 
+#output-name {
+  margin-top: 120px;
+  margin-left: 50px;
+}
+
 body, button {
   font-family: 'Courier';
 }

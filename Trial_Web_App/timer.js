@@ -8,21 +8,21 @@ let trialStart = 0,
 let trialData = new Object();
 
 function displayTimer() {
-  // initilized all local variables:
+  // initialized all local variables:
   var hours = '00',
     minutes = '00',
-    miliseconds = 0,
+    milliseconds = 0,
     seconds = '00',
     time = '',
-    timeNow = new Date().getTime(); // timestamp (miliseconds)
+    timeNow = new Date().getTime(); // timestamp (milliseconds)
 
   T.difference = timeNow - T.timerStarted;
 
   // milliseconds
   if (T.difference > 10) {
-    miliseconds = Math.floor((T.difference % 1000) / 10);
-    if (miliseconds < 10) {
-      miliseconds = '0' + String(miliseconds);
+    milliseconds = Math.floor((T.difference % 1000) / 10);
+    if (milliseconds < 10) {
+      milliseconds = '0' + String(milliseconds);
     }
   }
   // seconds
@@ -58,10 +58,10 @@ function displayTimer() {
     }
   }
 
-  time = hours + ':'
-  time += minutes + ':'
-  time += seconds + ':'
-  time += miliseconds;
+  time = hours + ':';
+  time += minutes + ':';
+  time += seconds + ':';
+  time += milliseconds;
 
   T.timerDiv.innerHTML = time;
 }
@@ -118,6 +118,9 @@ function download(content, fileName, contentType) {
 }
 
 function stopTimer() {
+  dataName = document.getElementById('filename').value;
+  fileName = `${dataName}.json`;
+
   clearInterval(T.timerInterval); // stop updating the timer
   trialData.trialStart = trialStart;
   trialData.trackViolations = trackViolations;
@@ -126,7 +129,7 @@ function stopTimer() {
   trialData.laps = laps
 
   console.log(trialData);
-  download(JSON.stringify(trialData), 'data.json', 'application/json');
+  download(JSON.stringify(trialData), fileName, 'application/json');
 }
 
 function clearTimer() {
