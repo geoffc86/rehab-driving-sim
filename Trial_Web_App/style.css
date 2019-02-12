@@ -60,6 +60,7 @@
 #traction { margin-top: 20px; background-color: orange;}
 #crash { margin-top: 20px; background-color: orange;}
 #lap { margin-top: 20px; margin-left: 20px; background-color: lightblue;}
+#filename { margin-top: 20px;}
 
 #counters {
   float: left;
@@ -68,11 +69,6 @@
 }
 
 #rows {
-}
-
-#output-name {
-  margin-top: 120px;
-  margin-left: 50px;
 }
 
 body, button {
