@@ -132,10 +132,14 @@ function stopTimer() {
   download(JSON.stringify(trialData), fileName, 'application/json');
 }
 
-function clearTimer() {
+function resetTimer() {
   clearInterval(T.timerInterval);
   T.timerDiv.innerHTML = "00:00:00:00"; // reset timer to all zeros
   T.difference = 0;
+}
+
+function clearTimer() {
+  resetTimer();
   trialData = new Object();
   trialStart = 0;
   trackViolations = [];
