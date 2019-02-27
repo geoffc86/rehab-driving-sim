@@ -1,0 +1,39 @@
+
+
+This is a nice job, and you have captured several important items about
+your project, such as the fact that there isn't much unit or integration
+testing you can do because of the API restrictions.
+
+It's good that you have still listed testing at all levels, and noted
+that it will be by "inspection" [in the parlance of our times].  It
+would be good to have some sort of matrix that lists the tests and links
+them to the requirements, but I think you have covered it well enough.
+
+I notice that you used the outline from CMSI 401, even though this is not
+that class.  The outline for CMSI 402 is different and includes more of
+the details that I'm referring to above.
+
+It's difficult to write tests for third party software, but you can still
+outline in more detail what you'll be looking for in the "inspection" of
+the output.  For example, what items will you be looking at in the report
+from the experiment and what values do you expect to see?  What are the
+pass/fail criteria for the tests?
+
+Take a look at the CMSI 402 outline and descriptions to see what I mean.
+Then give this one more shot by the end of the semester for full credit
+on the assignment.
+
+Nice work!
+
+So far for the semester:
+Proposal:      5.0  out of  5.0  points
+Requirements: 15.0  out of 15.0  points
+Test Plan:    12.0  out of 15.0  points
+Homework 1:    3.34 out of  3.34 points
+Homework 2:    3.34 out of  3.34 points
+Particip.:     1.5  out of  1.5  points
+              40.18 out of 43.18 points = 93.05% which is an A
+
+Keep it up!
+		      
+
