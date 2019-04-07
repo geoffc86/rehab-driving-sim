@@ -3,12 +3,13 @@ LT = {};
 T.timerDiv = document.getElementById('timer');
 LT.timerDiv = document.getElementById('laptimer');
 
-let trialStart = 0,
-  trackViolations = [],
-  tractionViolations = [],
-  crashViolations = [],
-  laps = [];
-let trialData = new Object();
+let laps = [],
+  trialData = new Object(
+    trackViolations = [],
+    tractionViolations = [],
+    crashViolations = [],
+    lapTime = undefined
+  );
 
 function displayTimer(T) {
   // initialized all local variables:
@@ -78,20 +79,33 @@ function startTimer() {
     T.timerStarted = T.timerStarted - T.difference
   }
   // update timer periodically
-  T.timerInterval = setInterval(function() {
+  T.timerInterval = setInterval(function () {
     displayTimer(T)
   }, 10);
 
 }
 
-function trackCounter() { trackViolations.push(T.timerDiv.innerHTML); }
+function trackCounter(trialData) {
+  trialData.trackViolations.push(LT.timerDiv.innerHTML);
+}
 
-function tractionCounter() { tractionViolations.push(T.timerDiv.innerHTML); }
+function tractionCounter(trialData) {
+  trialData.tractionViolations.push(LT.timerDiv.innerHTML);
+}
 
-function crashCounter() { crashViolations.push(T.timerDiv.innerHTML); }
+function crashCounter(trialData) {
+  trialData.crashViolations.push(LT.timerDiv.innerHTML);
+}
 
-function lap() { 
-  laps.push(LT.timerDiv.innerHTML);
+function lap() {
+  trialData.lapTime = LT.timerDiv.innerHTML;
+  laps.push(trialData);
+  trialData = new Object(
+    trackViolations = [],
+    tractionViolations = [],
+    crashViolations = [],
+    lapTime = undefined
+  );
   resetLTimer();
   startTrial();
 }
@@ -104,59 +118,57 @@ function startTrial() {
     LT.timerStarted = LT.timerStarted - LT.difference
   }
   // update timer periodically
-  LT.timerInterval = setInterval(function() {
+  LT.timerInterval = setInterval(function () {
     displayTimer(LT)
   }, 10);
 }
 
-$(document).keydown(function(keyPressed) {
-   if (keyPressed.keyCode == 49) {
-     trackCounter();
-     console.log("Pressed 1");
-   } else if (keyPressed.keyCode == 50) {
-     tractionCounter();
-     console.log("Pressed 2");
-   } else if (keyPressed.keyCode == 51) {
-     crashCounter();
-     console.log("Pressed 3");
-   } else if (keyPressed.keyCode == 52) {
-     lap();
-     console.log("Pressed 4");
-   }
-  });
+$(document).keydown(function (keyPressed) {
+  if (keyPressed.keyCode == 49) {
+    lap();
+    console.log("Pressed 1");
+  } else if (keyPressed.keyCode == 50) {
+    trackCounter();
+    console.log("Pressed 2");
+  } else if (keyPressed.keyCode == 51) {
+    tractionCounter();
+    console.log("Pressed 3");
+  } else if (keyPressed.keyCode == 52) {
+
+    crashCounter();
+    console.log("Pressed 4");
+  }
+});
 
 function download(content, fileName, contentType) {
-    var a = document.createElement("a");
-    var file = new Blob([content], {type: contentType});
-    a.href = URL.createObjectURL(file);
-    a.download = fileName;
-    a.click();
+  var a = document.createElement("a");
+  var file = new Blob([content], {
+    type: contentType
+  });
+  a.href = URL.createObjectURL(file);
+  a.download = fileName;
+  a.click();
 }
 
 function stopTimer() {
   dataName = document.getElementById('filename').value;
   fileName = `${dataName}.json`;
 
-  clearInterval(T.timerInterval);
-  clearInterval(LT.timerInterval); // stop updating the timer
-  trialData.trialStart = trialStart;
-  trialData.trackViolations = trackViolations;
-  trialData.tractionViolations = tractionViolations;
-  trialData.crashViolations = crashViolations;
-  trialData.laps = laps
+  if (trialData.lapTime === undefined) {
+    trialData.lapTime = LT.timerDiv.innerHTML;
+    laps.push(trialData);
+  }
 
-  console.log(trialData);
-  download(JSON.stringify(trialData), fileName, 'application/json');
+  clearTimer();
+
+  console.log(laps);
+  download(JSON.stringify(laps), fileName, 'application/json');
 }
 
 function resetTimer() {
   clearInterval(T.timerInterval);
   T.timerDiv.innerHTML = "00:00:00:00"; // reset timer to all zeros
   T.difference = 0;
-
-  clearInterval(LT.timerInterval);
-  LT.timerDiv.innerHTML = "00:00:00:00"; // reset timer to all zeros
-  LT.difference = 0;
 }
 
 function resetLTimer() {
@@ -165,13 +177,7 @@ function resetLTimer() {
   LT.difference = 0;
 }
 
-
 function clearTimer() {
+  resetLTimer();
   resetTimer();
-  trialData = new Object();
-  trialStart = 0;
-  trackViolations = [];
-  tractionViolations = [];
-  crashViolations = [];
-  laps = [];
 }
