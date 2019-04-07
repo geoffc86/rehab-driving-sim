@@ -9,6 +9,19 @@
   text-align: center;
 }
 
+#hh {margin-left: 45px;}
+#mm {margin-left: 80px;}
+#ss {margin-left: 70px;}
+#ms {margin-left: 45px;}
+
+#labels {
+  text-align: center;
+  margin-top: -25px;
+  z-index: 2;
+  color: white;
+  font-size: 12px;
+}
+
 #laptimer {
   width: 320px;
   font-size: 48px;
@@ -22,25 +35,30 @@
   margin-right: auto;
 }
 
+#lap { width: 150px; height: 95px; float: left; margin-left: 270px;}
 #clear { width: 175px; height: 95px; float: right; margin-right: 250px; margin-top: -95px; }
 
-#labels {
-  text-align: center;
-  margin-top: -25px;
-  z-index: 2;
-  color: white;
-  font-size: 12px;
+.cntrs {
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #888888;
+  border-color: black;
+  border-width: 3px;
+  background-color: lightblue;
 }
-#hh {margin-left: 45px;}
-#mm {margin-left: 80px;}
-#ss {margin-left: 70px;}
-#ms {margin-left: 45px;}
 
 #controls {
   margin-left: 200px;
   margin-right: 200px;
   margin-top: 30px;
 }
+
+#go    { background-color: limegreen; }
+
+#stop  { background-color: red; }
+
+#start { background-color: yellow;}
 
 .cntrls {
   width: auto;
@@ -54,31 +72,15 @@
   border-width: 3px;
 }
 
-.cntrs {
-  font-size: 25px;
-  font-weight: bold;
-  border-radius: 10px;
-  box-shadow: 5px 5px 5px #888888;
-  border-color: black;
-  border-width: 3px;
-  background-color: lightblue;
-}
+#track { margin-top: 20px; margin-left: 20px; background-color: orange; float: left}
 
-#go    { background-color: limegreen; }
+#traction { margin-top: 20px; margin-left: 20px; background-color: orange; float: left}
 
-#stop  { background-color: red; }
+#crash { margin-top: 20px; margin-left: 20px; background-color: orange; float: left}
 
-#start { background-color: yellow;}
+#filename { margin-top: 20px; margin-left: 20px; width: 150px; height: 30px; text-align: center; border-radius: 5px; border-color: black; border-width: 3px;}
 
-#track { margin-top: 20px; background-color: orange;}
-#traction { margin-top: 20px; background-color: orange;}
-#crash { margin-top: 20px; background-color: orange;}
-#lap { width: 150px; height: 95px; float: left; margin-left: 270px;}
-#filename { margin-top: 20px;}
-
-
-#rows {
-}
+#counters { margin-left: 150px }
 
 body, button {
   font-family: 'Courier';

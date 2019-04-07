@@ -82,17 +82,6 @@ function startTimer() {
     displayTimer(T)
   }, 10);
 
-  LT.timerStarted = new Date().getTime();
-  console.log('LT.timerStarted: ' + LT.timerStarted)
-
-  if (LT.difference > 0) {
-    LT.timerStarted = LT.timerStarted - LT.difference
-  }
-  // update timer periodically
-  LT.timerInterval = setInterval(function() {
-    displayTimer(LT)
-  }, 10);
-
 }
 
 function trackCounter() { trackViolations.push(T.timerDiv.innerHTML); }
@@ -103,12 +92,21 @@ function crashCounter() { crashViolations.push(T.timerDiv.innerHTML); }
 
 function lap() { 
   laps.push(LT.timerDiv.innerHTML);
-  resetTimer(LT);
-  startTimer(LT);
+  resetLTimer();
+  startTrial();
 }
 
 function startTrial() {
-  trialStart = T.timerDiv.innerHTML
+  LT.timerStarted = new Date().getTime();
+  console.log('LT.timerStarted: ' + LT.timerStarted)
+
+  if (LT.difference > 0) {
+    LT.timerStarted = LT.timerStarted - LT.difference
+  }
+  // update timer periodically
+  LT.timerInterval = setInterval(function() {
+    displayTimer(LT)
+  }, 10);
 }
 
 $(document).keydown(function(keyPressed) {
@@ -160,6 +158,13 @@ function resetTimer() {
   LT.timerDiv.innerHTML = "00:00:00:00"; // reset timer to all zeros
   LT.difference = 0;
 }
+
+function resetLTimer() {
+  clearInterval(LT.timerInterval);
+  LT.timerDiv.innerHTML = "00:00:00:00"; // reset timer to all zeros
+  LT.difference = 0;
+}
+
 
 function clearTimer() {
   resetTimer();
