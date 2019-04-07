@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Stopwatch</title>
+  <link href="./style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div>
+    <div id='timer'>00:00:00:00</div>
+    <div id='labels'>
+      <span id='hh'>Hours</span>
+      <span id='mm'>Minutes</span>
+      <span id='ss'>Seconds</span>
+      <span id='ms'>Centiseconds</span>
+    </div>
+  </div>
+  <div>
+    <button onclick='lap()' id='lap' class="cntrs">(4) Lap</button>
+    <div id='laptimer'>00:00:00:00</div>
+    <button onclick='clearTimer()' id='clear' class="cntrs">Clear Experiment</button>
+  </div> 
+
+  <div id='controls'>
+    <button onclick='startTimer()' class=" cntrls" id="go">Start Experiment</button>
+    <button onclick='stopTimer()' class="cntrls" id="stop">Stop Experiment</button>
+    <button onclick='startTrial()' class="cntrls" id="start">Start Trial</button>
+  </div>
+
+
+
+  <div id="counters">
+    <div id="rows"><button onclick='trackCounter()' id='track' class="cntrs">(1) Track Violation</button></div>
+    <div id="rows"><button onclick='tractionCounter()' id='traction' class="cntrs">(2) Traction Loss</button></div>
+    <div id="rows"><button onclick='crashCounter()' id='crash' class="cntrs">(3) Crash</button></div>
+    <div id='rows'>Filename: <input id='filename' type="text" value='data'></div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="./timer.js"></script>
+
+</body>
+
+</html>

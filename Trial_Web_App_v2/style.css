@@ -1,0 +1,85 @@
+#timer {
+  margin: auto;
+  width: 460px;
+  font-size: 70px;
+  background-color: black;
+  color: white;
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#laptimer {
+  width: 320px;
+  font-size: 48px;
+  background-color: grey;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#clear { width: 175px; height: 95px; float: right; margin-right: 250px; margin-top: -95px; }
+
+#labels {
+  text-align: center;
+  margin-top: -25px;
+  z-index: 2;
+  color: white;
+  font-size: 12px;
+}
+#hh {margin-left: 45px;}
+#mm {margin-left: 80px;}
+#ss {margin-left: 70px;}
+#ms {margin-left: 45px;}
+
+#controls {
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: 30px;
+}
+
+.cntrls {
+  width: auto;
+  height: auto;
+  margin-left: 50px;
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #888888;
+  border-color: black;
+  border-width: 3px;
+}
+
+.cntrs {
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #888888;
+  border-color: black;
+  border-width: 3px;
+  background-color: lightblue;
+}
+
+#go    { background-color: limegreen; }
+
+#stop  { background-color: red; }
+
+#start { background-color: yellow;}
+
+#track { margin-top: 20px; background-color: orange;}
+#traction { margin-top: 20px; background-color: orange;}
+#crash { margin-top: 20px; background-color: orange;}
+#lap { width: 150px; height: 95px; float: left; margin-left: 270px;}
+#filename { margin-top: 20px;}
+
+
+#rows {
+}
+
+body, button {
+  font-family: 'Courier';
+}
