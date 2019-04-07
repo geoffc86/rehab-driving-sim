@@ -3,11 +3,12 @@ LT = {};
 T.timerDiv = document.getElementById('timer');
 LT.timerDiv = document.getElementById('laptimer');
 
+trackViolations = new Array();
+tractionViolations = new Array();
+crashViolations = new Array();
+
 let laps = [],
   trialData = new Object(
-    trackViolations = [],
-    tractionViolations = [],
-    crashViolations = [],
     lapTime = undefined
   );
 
@@ -85,27 +86,30 @@ function startTimer() {
 
 }
 
-function trackCounter(trialData) {
-  trialData.trackViolations.push(LT.timerDiv.innerHTML);
+function trackCounter() {
+  trackViolations.push(LT.timerDiv.innerHTML);
 }
 
-function tractionCounter(trialData) {
-  trialData.tractionViolations.push(LT.timerDiv.innerHTML);
+function tractionCounter() {
+  tractionViolations.push(LT.timerDiv.innerHTML);
 }
 
-function crashCounter(trialData) {
-  trialData.crashViolations.push(LT.timerDiv.innerHTML);
+function crashCounter() {
+  crashViolations.push(LT.timerDiv.innerHTML);
 }
 
 function lap() {
   trialData.lapTime = LT.timerDiv.innerHTML;
+  trialData.trackViolations = trackViolations;
+  trialData.tractionViolations = tractionViolations;
+  trialData.crashViolations = crashViolations
   laps.push(trialData);
   trialData = new Object(
-    trackViolations = [],
-    tractionViolations = [],
-    crashViolations = [],
     lapTime = undefined
   );
+  trackViolations = new Array(),
+  tractionViolations = new Array(),
+  crashViolations = new Array(),
   resetLTimer();
   startTrial();
 }
@@ -156,6 +160,9 @@ function stopTimer() {
 
   if (trialData.lapTime === undefined) {
     trialData.lapTime = LT.timerDiv.innerHTML;
+    trialData.trackViolations = trackViolations;
+    trialData.tractionViolations = tractionViolations;
+    trialData.crashViolations = crashViolations;
     laps.push(trialData);
   }
 
