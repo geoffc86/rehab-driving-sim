@@ -7,6 +7,10 @@ trackViolations = new Array();
 tractionViolations = new Array();
 crashViolations = new Array();
 
+trackViolationsCount = 0;
+tractionViolationsCount = 0;
+crashViolationsCount = 0;
+
 let laps = [],
   trialData = new Object(
     lapTime = undefined
@@ -88,28 +92,39 @@ function startTimer() {
 
 function trackCounter() {
   trackViolations.push(LT.timerDiv.innerHTML);
+  trackViolationsCount++;
 }
 
 function tractionCounter() {
   tractionViolations.push(LT.timerDiv.innerHTML);
+  tractionViolationsCount++;
 }
 
 function crashCounter() {
   crashViolations.push(LT.timerDiv.innerHTML);
+  crashViolationsCount++;
 }
 
 function lap() {
   trialData.lapTime = LT.timerDiv.innerHTML;
-  trialData.trackViolations = trackViolations;
-  trialData.tractionViolations = tractionViolations;
-  trialData.crashViolations = crashViolations
+  // trialData.trackViolations = trackViolations;
+  // trialData.tractionViolations = tractionViolations;
+  // trialData.crashViolations = crashViolations
+  trialData.trackViolationsCount = trackViolationsCount;
+  trialData.tractionViolationsCount = tractionViolationsCount;
+  trialData.crashViolationsCount = crashViolationsCount;
   laps.push(trialData);
   trialData = new Object(
     lapTime = undefined
   );
-  trackViolations = new Array(),
-  tractionViolations = new Array(),
-  crashViolations = new Array(),
+  trackViolations = new Array();
+  tractionViolations = new Array();
+  crashViolations = new Array();
+
+  trackViolationsCount = 0;
+  tractionViolationsCount = 0;
+  crashViolationsCount = 0;
+
   resetLTimer();
   startTrial();
 }
@@ -144,25 +159,82 @@ $(document).keydown(function (keyPressed) {
   }
 });
 
-function download(content, fileName, contentType) {
-  var a = document.createElement("a");
-  var file = new Blob([content], {
-    type: contentType
+function convertArrayOfObjectsToCSV(args) {  
+  var result, ctr, keys, columnDelimiter, lineDelimiter, data;
+
+  data = args.data || null;
+  if (data == null || !data.length) {
+      return null;
+  }
+
+  columnDelimiter = args.columnDelimiter || ',';
+  lineDelimiter = args.lineDelimiter || '\n';
+
+  keys = Object.keys(data[0]);
+
+  result = '';
+  result += keys.join(columnDelimiter);
+  result += lineDelimiter;
+
+  data.forEach(function(item) {
+      ctr = 0;
+      keys.forEach(function(key) {
+          if (ctr > 0) result += columnDelimiter;
+
+          result += item[key];
+          ctr++;
+      });
+      result += lineDelimiter;
   });
-  a.href = URL.createObjectURL(file);
-  a.download = fileName;
-  a.click();
+
+  return result;
+}
+
+function downloadCSV(args) {  
+  var data, filename, link;
+  var csv = convertArrayOfObjectsToCSV({
+      data: laps
+  });
+  if (csv == null) return;
+
+  filename = `${args.filename}.csv` || 'export.csv';
+
+  if (!csv.match(/^data:text\/csv/i)) {
+      csv = 'data:text/csv;charset=utf-8,' + csv;
+  }
+  data = encodeURI(csv);
+
+  link = document.createElement('a');
+  link.setAttribute('href', data);
+  link.setAttribute('download', filename);
+  link.click();
+}
+
+function download(content, fileName, contentType) {
+  downloadCSV({filename: fileName})
+  // var a = document.createElement("a");
+  // var file = new Blob([content], {
+  //   type: contentType
+  // });
+  // a.href = URL.createObjectURL(file);
+  // a.download = `${fileName}.json`;
+  // a.click();
 }
 
 function stopTimer() {
-  dataName = document.getElementById('filename').value;
-  fileName = `${dataName}.json`;
+  fileName = document.getElementById('filename').value;
+  
 
   if (trialData.lapTime === undefined) {
     trialData.lapTime = LT.timerDiv.innerHTML;
-    trialData.trackViolations = trackViolations;
-    trialData.tractionViolations = tractionViolations;
-    trialData.crashViolations = crashViolations;
+    // trialData.trackViolations = trackViolations;
+    // trialData.tractionViolations = tractionViolations;
+    // trialData.crashViolations = crashViolations;
+
+    trialData.trackViolationsCount = trackViolationsCount;
+    trialData.tractionViolationsCount = tractionViolationsCount;
+    trialData.crashViolationsCount = crashViolationsCount;
+
     laps.push(trialData);
   }
 
